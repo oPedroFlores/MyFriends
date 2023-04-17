@@ -1,0 +1,63 @@
+.photo:nth-child(2) {
+  grid-column: 2 / 4;
+  grid-row: span 2;
+}
+
+@media (max-width: 40rem) {
+  .photo:nth-child(2) {
+    grid-column: initial;
+    grid-row: initial;
+  }
+}
+
+.photo{
+  display: grid;
+  border-radius: .4rem;
+  overflow: hidden;
+  cursor: pointer
+}
+
+.photo > div{
+  grid-area: 1/1;
+}
+
+.infos{
+  background: rgba(0,0,0,0.5);
+  color:white;
+  font-size: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1/1;
+  display: none;
+  font-weight: bold;
+  gap: 1rem;
+}
+
+
+.photo:hover .infos{
+  display: flex;
+}
+
+span{
+  gap: .3rem;
+  display: flex;
+  align-items: center;
+}
+
+.curtidasStroke{
+  stroke-width: 2;
+}
+
+.curtido, .curtidas{
+  transition: .1s;
+  cursor:pointer;
+}
+
+.curtido{
+  color: rgba(255, 93, 93, 0.8);
+}
+.curtido path{
+  fill: rgba(255, 93, 93, 0.8);
+  stroke: rgba(255, 93, 93, 0.8);
+}

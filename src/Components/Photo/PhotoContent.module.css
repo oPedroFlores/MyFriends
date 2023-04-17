@@ -1,0 +1,155 @@
+.photo{
+  margin: auto;
+  height: 36rem;
+  border-radius: .2rem;
+  background: white;
+  display: grid;
+  grid-template-columns: 36rem 20rem;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(.8);
+  animation: .3s scaleUp forwards;
+}
+
+.single.photo{
+  grid-template-columns: 1fr;
+  height: auto;
+}
+
+.single .details{
+  padding: 1rem 0px 0px 0px;
+}
+
+@keyframes scaleUp{
+  to{
+    opacity: initial;
+    transform: initial;
+  }
+}
+
+.details{
+  padding: 2rem 2rem 0 2rem;
+}
+
+.img{
+  grid-row: 1/4;
+}
+
+.single .img{
+  grid-row: 1;
+  border-radius: .4rem;
+  overflow: hidden;
+}
+
+.author{
+  opacity: .5;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author a:hover{
+  text-decoration: underline;
+}
+.svg:first-child{
+  user-select: none;
+  width: 25px;
+  height: 25px;
+}
+
+.divSvg{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.divSvg span:nth-child(2){
+  user-select: none;
+  padding: 0 6px;
+}
+
+.curtido, .curtidas{
+  transition: .1s;
+  cursor:pointer;
+}
+
+.curtido{
+  color: red;
+}
+.curtido path{
+  fill: red;
+  stroke: red;
+}
+
+#spanLike{
+  padding: 0;
+  margin: 0;
+}
+
+.curtido > *{
+  animation: like .2s 1 linear;
+}
+
+.curtidas > *{
+  animation: unlike .2s 1 linear;
+}
+
+@keyframes like {
+  0%{
+  transform: scale(initial);   
+  }
+  50%{
+  transform: scale(1.3);
+  }
+  100%{
+  transform: scale(initial);
+  }
+}
+
+@keyframes unlike {
+  0%{
+  transform: scale(initial);   
+  }
+  50%{
+  transform: scale(.6);
+  }
+  100%{
+  transform: scale(initial);
+  }
+}
+
+.legenda{
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  word-break: break-all;
+  max-width: 100%;
+  min-height: 4rem;
+  max-height: 5.5rem;
+  width: 100%;
+  background: rgba(0, 0, 0, .05);
+  border-radius: .4rem;
+  padding: .5rem;
+  overflow-y: auto;
+}
+
+.legenda::-webkit-scrollbar {
+  width: 3px;
+}
+
+
+@media (max-width: 64rem){
+  .photo{
+    height: 100vh ;
+    max-height: calc(100vh - 4rem);
+    overflow: auto;
+    grid-template-columns: minmax(20rem, 30rem);
+  }
+  img{
+    grid-row: 1;
+  }
+  
+}
